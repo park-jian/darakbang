@@ -1,5 +1,6 @@
 import React from "react";
+import banner2 from "../image/banner2.jpg";
 
 export default function Header() {
-  return <div>Header</div>;
+  return <>{/* <img src={banner2} alt="Banner" /> */}</>;
 }
