@@ -1,22 +1,18 @@
 {
-  "kind": "itemListResponse",
-  "pageInfo": {
-    "totalResults": 1,
-    "resultsPerPage": 5
-  },
   "items": [
     {
     	"kind": "item",
     	"id": "item1",
-		"name": "(품절임박)블핑 제니가 입은 블라우스",
+		"name": "성북동 제니하우스",
 		"soldout": "N",
         "size": "90,95,100,105",
 		"color": "yellow,pink,skyblue",
-		"price": "30000",
-		"quantity": "3",
+		"price": "300000",
+    "reservation": "0",
+		"quantity": "1",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/TcXFMFkDeUN8pDqZ-2WShXiG6lXtpoRG2kfRMg3Nd9g947mESyRYqlWtwcoy9FyjiiLVLaTd=s88-c-k-c0x00ffffff-no-rj",
+            "url": "https://cdn.pixabay.com/photo/2016/11/18/17/20/living-room-1835923_640.jpg",
             "width": 88,
             "height": 88
           },
@@ -44,15 +40,16 @@
 	{
     	"kind": "item",
     	"id": "item2",
-		"name": "(인스타그램에서 품절대란)골덴 바지",
+		"name": "월세30만원 게스트하우스",
 		"soldout": "N",
         "size": "XS,S,M,L,XL",
 		"color": "black,white",
-		"price": "23000",
+		"price": "230000",
+    "reservation": "0",
 		"quantity": "3",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/TcXFMFkDeUN8pDqZ-2WShXiG6lXtpoRG2kfRMg3Nd9g947mESyRYqlWtwcoy9FyjiiLVLaTd=s88-c-k-c0x00ffffff-no-rj",
+            "url": "https://cdn.pixabay.com/photo/2017/09/09/18/25/living-room-2732939_640.jpg",
             "width": 88,
             "height": 88
           },
@@ -75,15 +72,16 @@
 	{
     	"kind": "item",
     	"id": "item3",
-		"name": "나이스 후리스",
+		"name": "경기도 양평 타운하우스",
 		"soldout": "Y",
         "size": "M,L,XL,XXL",
 		"color": "black,white,navy",
-		"price": "100000",
+		"price": "1000000",
 		"quantity": "3",
+    "reservation": "0",
         "thumbnails": {
           "default": {
-            "url": "https://yt3.ggpht.com/TcXFMFkDeUN8pDqZ-2WShXiG6lXtpoRG2kfRMg3Nd9g947mESyRYqlWtwcoy9FyjiiLVLaTd=s88-c-k-c0x00ffffff-no-rj",
+            "url": "https://cdn.pixabay.com/photo/2017/08/27/10/16/interior-2685521_640.jpg",
             "width": 88,
             "height": 88
           },
