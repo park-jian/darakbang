@@ -4,7 +4,17 @@ import { useNavigate } from "react-router-dom";
 export default function Product({
   alt,
   item,
-  item: { id, name, soldout, size, color, price, quantity, thumbnails },
+  item: {
+    id,
+    name,
+    soldout,
+    size,
+    color,
+    price,
+    quantity,
+    thumbnails,
+    options,
+  },
 }) {
   const navigate = useNavigate();
   const handleClick = () => {
