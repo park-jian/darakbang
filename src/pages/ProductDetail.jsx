@@ -1,16 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import Button from "../components/ui/Button";
 
 export default function ProductDetail() {
   const {
     state: {
-      item: { id, name, soldout, size, color, price, quantity, thumbnails },
+      item: {
+        id,
+        name,
+        soldout,
+        size,
+        color,
+        price,
+        quantity,
+        thumbnails,
+        options,
+      },
     },
   } = useLocation();
+  const [selected, setSelected] = useState(options && options[0]);
   const handleClick = (e) => {
-    debugger;
+    const item = { id, name, price, option: selected, quantity };
   };
+  const handleSelect = (e) => setSelected(e.target.value);
   return (
     <>
       <p className="mx-12 mt-4 text-gray-700">{name}</p>
@@ -23,6 +35,11 @@ export default function ProductDetail() {
         />
         <div className="w-full basis-5/12 flex flex-col p-4">
           <h2 className="text-3xl font-bold py-2">{quantity}개</h2>
+          <select id="select">
+            className="p-2 m-4 flex-1 border-2 border-dashed border-brand
+            outline-none" onChange={handleSelect}
+            value={selected}
+          </select>
           <p className="text-2xl font-bold py-2  border-b border-gray-400">
             ₩{price}
           </p>

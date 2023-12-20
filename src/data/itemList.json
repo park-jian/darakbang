@@ -8,6 +8,7 @@
         "size": "90,95,100,105",
 		"color": "yellow,pink,skyblue",
 		"price": "300000",
+    "options": "2인실,3인실,4인실",
     "reservation": "0",
 		"quantity": "1",
         "thumbnails": {
@@ -45,6 +46,7 @@
         "size": "XS,S,M,L,XL",
 		"color": "black,white",
 		"price": "230000",
+    "options": "2인실,3인실,4인실",
     "reservation": "0",
 		"quantity": "3",
         "thumbnails": {
@@ -77,6 +79,7 @@
         "size": "M,L,XL,XXL",
 		"color": "black,white,navy",
 		"price": "1000000",
+    "options": "2인실,3인실,4인실",
 		"quantity": "3",
     "reservation": "0",
         "thumbnails": {
