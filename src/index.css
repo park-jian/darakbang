@@ -18,3 +18,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/*텍스트 선택(드래그)를 막는 css*/
+.select-none {
+  user-select: none;
+}
