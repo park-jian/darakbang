@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import TabMenu from "../components/ui/TabMenu.jsx";
 import itemList from "../data/itemList.json";
+import Product from "../components/product/Product.jsx";
 
 export default function Home() {
   const [selectedItemList, setSelectedItemList] = useState(
@@ -35,5 +36,22 @@ export default function Home() {
   //   }
   // };
 
-  return <TabMenu onTabChange={handleTabChange} itemList={selectedItemList} />;
+  return (
+    <div className="px-60">
+      <TabMenu onTabChange={handleTabChange} itemList={selectedItemList} />
+      <div
+        id="allProducts"
+        className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-8 p-4"
+      >
+        {itemList.allProduct.map((item, index) => (
+          <Product
+            key={item.id}
+            alt={`상품 이미지 ${index + 1}`}
+            item={item}
+            no={index}
+          />
+        ))}
+      </div>
+    </div>
+  );
 }
