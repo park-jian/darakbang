@@ -8,44 +8,36 @@ import home from "../image/home.png";
 
 export default function Navbar() {
   return (
-    <div className="flex flex-row h-40 bg-blue-200 items-center">
-      <button className="w-30 text-base flex flex-col items-center justify-center h-full bg-sky-500 text-white">
+    <div className="flex flex-row h-20 bg-blue-200 items-center text-lg">
+      <button className="w-36 text-base flex flex-col items-center justify-center h-full bg-sky-500 text-white">
         <FiAlignJustify />
         카테고리
       </button>
-      <div className="h-full w-full p-3">
-        <div className="flex flex-row h-20 items-center">
-          <Link to="/" className="mr-6">
-            <img src={home} alt="logo" />
-          </Link>
-          <div className="flex items-center border-2 rounded-lg border-black w-60 mr-6">
-            <input className="border-0 bg-transparent w-60" type="text" />
-            <button className="right-0">
-              <FaSearch />
-            </button>
-          </div>
-          <Link
-            to="mypage"
-            className="mr-6 flex justify-center items-center flex-col"
-          >
-            <GiCharacter className="" />
-            <p>마이페이지</p>
-          </Link>
-          <Link
-            to="carts"
-            className="mr-6 flex justify-center items-center flex-col"
-          >
-            <RiShoppingCart2Line />
-            <p>장바구니</p>
-          </Link>
+      <div className="flex justify-around items-center h-full w-full p-3">
+        <Link to="/" className="mr-6">
+          <img src={home} alt="logo" />
+        </Link>
+        <div className="flex items-center border-2 rounded-lg border-black w-60 mr-6">
+          <input className="border-0 bg-transparent w-60" type="text" />
+          <button className="right-0">
+            <FaSearch />
+          </button>
         </div>
-        <div className="bottom-0 grid grid-flow-col justify-stretch">
-          <Link to="/">홈</Link>
-          <Link to="signin">로그인</Link>
-          <Link to="signup">회원가입</Link>
-
-          <Link to="support">고객센터</Link>
-        </div>
+        <Link to="signin">로그인</Link>
+        <Link to="signup">회원가입</Link>
+        <Link
+          to="mypage"
+          className="mr-6 flex justify-center items-center flex-col"
+        >
+          <GiCharacter className="" />
+        </Link>
+        <Link
+          to="carts"
+          className="mr-6 flex justify-center items-center flex-col"
+        >
+          <RiShoppingCart2Line />
+        </Link>
+        <Link to="support">고객센터</Link>
       </div>
     </div>
   );

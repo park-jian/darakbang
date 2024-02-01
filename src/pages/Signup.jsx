@@ -172,7 +172,7 @@ function SignUp() {
         className: "signupIcon",
       }}
     >
-      <div className="flex justify-center items-center flex-col w-6/12 h-3/5 border rounded top-2/4 left-2/4 translate-y-1/2 translate-x-1/2">
+      <div className="flex justify-center items-center flex-col w-6/12 h-3/5 top-2/4 left-2/4 translate-y-1/2 translate-x-1/2">
         <form onSubmit={handleSubmit} className="w-full h-full">
           <div
             id="section_title"
@@ -187,12 +187,12 @@ function SignUp() {
                   for="join_name"
                   className="relative cursor-pointer block h-12 p-0 border border-stone-300 box-border"
                 >
-                  <span className="relative h-full min-w-11 w-12 border-r border-stone-300 box-border flex justify-center items-center">
+                  <span className="relative h-full min-w-11 border-r float-left flex items-center justify-center border-stone-300 box-border">
                     <GiCharacter />
                   </span>
-                  <span className="relative m-0 overflow-hidden">
+                  <div className="relative m-0 overflow-hidden">
                     <input
-                      className="m-0 h-12 box-border w-full pt-4 pb-3 text-sm"
+                      className="m-0 h-full w-full align-middle box-border pl-2 pt-3 pb-3 text-sm"
                       id="join_name"
                       type="text"
                       name="name"
@@ -200,45 +200,82 @@ function SignUp() {
                       onChange={handleChange}
                       required
                     />
-                    <span>이름</span>
-                  </span>
+                    <span class="signupInput">이름</span>
+                  </div>
                 </label>
               </div>
             </div>
             <div id="member_wrap">
-              <div>
-                <MdOutlinePhoneIphone />
+              <div id="member_input_field" className="relative">
+                <label
+                  for="join_selectInput"
+                  className="relative cursor-pointer block h-12 p-0 border border-stone-300 box-border"
+                >
+                  <span className="relative h-full min-w-11 border-r float-left flex items-center justify-center border-stone-300 box-border">
+                    <MdOutlinePhoneIphone />
+                  </span>
+                  <div className="relative m-0 overflow-hidden">
+                    <input
+                      id="join_selectInput"
+                      className="m-0 h-full w-full align-middle box-border pl-2 pt-3 pb-3 text-sm"
+                      type="tel"
+                      name="phone"
+                      value={userInfo.phone}
+                      onChange={handleChange}
+                    />
+                    <span class="signupInput">선택 입력</span>
+                  </div>
+                </label>
               </div>
-              <input
-                type="tel"
-                name="phone"
-                value={userInfo.phone}
-                onChange={handleChange}
-                placeholder="선택 입력"
-              />
             </div>
             <div id="member_wrap">
-              <div>
-                <MdOutlineEmail />
+              <div id="member_input_field" className="relative">
+                <label
+                  for="join_inputEmail"
+                  className="relative cursor-pointer block h-12 p-0 border border-stone-300 box-border"
+                >
+                  <span className="relative h-full min-w-11 border-r float-left flex items-center justify-center border-stone-300 box-border">
+                    <MdOutlineEmail />
+                  </span>
+                  <div className="relative m-0 overflow-hidden">
+                    <input
+                      className="m-0 h-full w-full align-middle box-border pl-2 pt-3 pb-3 text-sm"
+                      id="join_inputEmail"
+                      type="text"
+                      name="email"
+                      value={userInfo.email}
+                      onChange={handleChange}
+                      // onBlur={validateEmail}
+                      required
+                    />
+                    <span class="signupInput">이메일 입력</span>
+                  </div>
+                </label>
               </div>
-              <input
-                type="text"
-                name="email"
-                value={userInfo.email}
-                onChange={handleChange}
-                // onBlur={validateEmail}
-                placeholder="이메일 입력"
-                required
-              />
             </div>
             <button id="btnCheck">인증메일 받기</button>
-            <div>
-              <input
-                type="text"
-                placeholder="인증번호를 입력하세요"
-                onChange={handleAuthCheck}
-                name=""
-              />
+            <div id="member_wrap">
+              <div id="member_input_field" className="relative">
+                <label
+                  for="join_authNumber"
+                  className="relative cursor-pointer block h-12 p-0 border border-stone-300 box-border"
+                >
+                  <span className="relative h-full min-w-11 border-r float-left flex items-center justify-center border-stone-300 box-border">
+                    <MdOutlineEmail />
+                  </span>
+                  <div className="relative m-0 overflow-hidden">
+                    <input
+                      id="join_authNumber"
+                      className="m-0 h-full w-full align-middle box-border pl-2 pt-3 pb-3 text-sm"
+                      type="text"
+                      placeholder=""
+                      onChange={handleAuthCheck}
+                      name=""
+                    />
+                    <span class="signupInput">인증번호를 입력하세요</span>
+                  </div>
+                </label>
+              </div>
             </div>
             {/* {!emailSuccess && (
               // <IoIosCloseCircle style={{ color: "red", marginLeft: "10px" }} />
@@ -291,34 +328,57 @@ function SignUp() {
               이미 가입된 이메일은 인증번호를 받을 수 없습니다.
               <br />
             </span>
-
             <div id="member_wrap">
-              <div>
-                <TbLock />
+              <div id="member_input_field" className="relative">
+                <label
+                  for="join_password"
+                  className="relative cursor-pointer block h-12 p-0 border border-stone-300 box-border"
+                >
+                  <span className="relative h-full min-w-11 border-r float-left flex items-center justify-center border-stone-300 box-border">
+                    <TbLock />
+                  </span>
+                  <div className="relative m-0 overflow-hidden">
+                    <input
+                      id="join_password"
+                      className="m-0 h-full w-full align-middle box-border pl-2 pt-3 pb-3 text-sm"
+                      type="password"
+                      name="password"
+                      value={userInfo.password}
+                      onChange={handleChange}
+                      onBlur={validatePassword}
+                      required
+                    />
+                    <span class="signupInput">비밀번호 입력</span>
+                  </div>
+                </label>
               </div>
-              <input
-                type="password"
-                name="password"
-                value={userInfo.password}
-                onChange={handleChange}
-                onBlur={validatePassword}
-                required
-              />
               {/* {!passwordSuccess && <span style={{ color: "red" }}>✖️</span>}
             {passwordSuccess && userInfo.password && <span>✅</span>} */}
             </div>
             <div id="member_wrap">
-              <div>
-                <TbLockCheck />
+              <div id="member_input_field" className="relative">
+                <label
+                  for="join_checkPassword"
+                  className="relative cursor-pointer block h-12 p-0 border border-stone-300 box-border"
+                >
+                  <span className="relative h-full min-w-11 border-r float-left flex items-center justify-center border-stone-300 box-border">
+                    <TbLockCheck />
+                  </span>
+                  <div className="relative m-0 overflow-hidden">
+                    <input
+                      id="join_checkPassword"
+                      className="m-0 h-full w-full align-middle box-border pl-2 pt-3 pb-3 text-sm"
+                      type="password"
+                      name="confirmPassword"
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      onBlur={validateConfirmPassword}
+                      required
+                    />
+                    <span class="signupInput">비밀번호 확인</span>
+                  </div>
+                </label>
               </div>
-              <input
-                type="password"
-                name="confirmPassword"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                onBlur={validateConfirmPassword}
-                required
-              />
               {/* {!confirmPasswordSuccess && <span style={{ color: "red" }}>✖️</span>}
             {confirmPasswordSuccess && userInfo.password && confirmPassword && (
               <span>✅</span>

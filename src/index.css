@@ -25,6 +25,23 @@ code {
 }
 .signupIcon {
   opacity: 0.5;
-  width: 18px;
+  width: 28px;
   height: 18px;
+}
+.signupInput {
+  position: absolute;
+  text-overflow: hidden;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+  transition:opacity -25s ease;
+  opacity: 1;
+  padding: 12px 0 12px;
+  text-indent: 0.75rem;
+  color: rgb(217 220 224); 
+  font-weight: 700;
+  text-align: center;
+  box-sizing: border-box;
 }
