@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { FaLock } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { IoCloseCircle, IoCheckmarkCircle } from "react-icons/io5";
 
 export default function EmailLogin() {
   const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
@@ -21,9 +21,18 @@ export default function EmailLogin() {
     const passwordRegex =
       /^(?=.*[a-zA-Z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
     if (!passwordRegex.test(password)) {
-      setPasswordError(<IoCloseCircle color="red" size="24" />);
+      setPasswordError("비밀 번호를 확인해 주세요");
     } else {
-      setPasswordError(<IoCheckmarkCircle color="green" size="24" />);
+      setPasswordError();
+    }
+  };
+  const handleEmailBlur = (e) => {
+    //이메일 유효성 검사(@기준 앞 구간이 알파벳 또는 숫자 조합, 뒷 구간이 알파벳 숫자 조합, @ 뒷구간에 . 뒷구간이 알파벳)
+    const emailRegex = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-za-z0-9\-]+/;
+    if (!emailRegex.test(email)) {
+      setEmailError("아이디는 이메일 형식으로 입력해주세요.");
+    } else {
+      setEmailError();
     }
   };
 
@@ -35,15 +44,21 @@ export default function EmailLogin() {
     <form className="w-full h-full" onSubmit={handleSubmit}>
       <div className="flex justify-center items-center flex-col w-full h-full ">
         <FaLock size="24" color="skyblue" />
-        <p className="m-6 text-2xl">Email Sign in</p>
+        <p className="m-6 text-2xl">이메일 로그인</p>
         <input
           type="email"
           value={email}
           onChange={handleEmailChange}
+          onBlur={handleEmailBlur}
           required
-          className="mb-3 w-3/5 h-9 border rounded-md"
+          className="w-3/5 h-9 border rounded-md"
           placeholder="Email Address*"
         ></input>
+        <div className="h-7">
+          {emailError && (
+            <span className="text-red-500 text-xs">{emailError}</span>
+          )}
+        </div>
         <input
           type="password"
           value={password}
@@ -52,8 +67,13 @@ export default function EmailLogin() {
           required
           className="w-3/5 h-9 border rounded-md"
           placeholder="Password*"
+          autoComplete="on"
         ></input>
-        {passwordError && <span>{passwordError}</span>}
+        <div className="h-7">
+          {passwordError && (
+            <span className="text-red-500 text-xs">{passwordError}</span>
+          )}
+        </div>
         <div className="flex justify-start w-3/5 m-2">
           <input className="mr-2" type="checkbox" />
           <span className="text-sm">자동로그인</span>
@@ -62,10 +82,10 @@ export default function EmailLogin() {
           SIGN IN
         </button>
         <div className="flex justify-between w-3/5 text-sm">
-          <Link to="/" className="cursor-grabbing underline">
+          <Link to="/passwordsearch" className="cursor-grabbing underline">
             Forgot password?
           </Link>
-          <Link to="/" className="cursor-grabbing underline">
+          <Link to="/signup" className="cursor-grabbing underline">
             Sign Up
           </Link>
         </div>

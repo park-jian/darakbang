@@ -8,7 +8,7 @@ export default function LoginForm() {
     setActiveTab(tabNumber);
   };
   return (
-    <div className="flex justify-center items-center flex-col w-96 h-3/5 border rounded top-2/4 left-2/4 translate-y-1/2 translate-x-1/2">
+    <div className="flex justify-center items-center flex-col w-96 h-3/5 border rounded mx-auto mt-12">
       <div className="tab-buttons mt-2 border-b-2 w-full h-8 flex items-center justify-around">
         <button
           onClick={() => handleTabClick(1)}

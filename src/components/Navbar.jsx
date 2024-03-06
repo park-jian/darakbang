@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FiAlignJustify } from "react-icons/fi";
 import { RiShoppingCart2Line } from "react-icons/ri";
 import { GiCharacter } from "react-icons/gi";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaMapMarkerAlt } from "react-icons/fa";
 import home from "../image/home.png";
 
 export default function Navbar() {
@@ -37,7 +37,14 @@ export default function Navbar() {
         >
           <RiShoppingCart2Line />
         </Link>
+        <Link
+          to="map"
+          className="mr-6 flex justify-center items-center flex-col"
+        >
+          <FaMapMarkerAlt />
+        </Link>
         <Link to="support">고객센터</Link>
+        <Link to="dashboard">대시보드</Link>
       </div>
     </div>
   );

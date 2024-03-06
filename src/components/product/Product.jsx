@@ -30,16 +30,17 @@ export default function Product({
       onClick={(e) => handleClick(e)}
       className="inline-block relative rounded-lg shadow-md overflow-hidden cursor-pointer transition-all hover:scale-105 list-none"
     >
-      <div>
-        <span>{no + 1}</span>
-      </div>
       <img
         className={`w-full ${quantity <= 0 ? "opacity-50" : ""}`}
         id={id}
         src={thumbnails.default.url}
         alt={alt}
       />
-      <div className="mt-2 px-2 text-lg flex justify-between items-center">
+      <div
+        className={`mt-2 px-2 text-lg flex justify-between items-center ${
+          quantity <= 0 ? "opacity-50" : ""
+        }`}
+      >
         <p>{`${name}`}</p>
         <p>{`1박 ${price}원`}</p>
       </div>
