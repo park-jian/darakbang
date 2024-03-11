@@ -1,0 +1,106 @@
+{
+  "user": [
+    {
+      "id": "u1",
+      "email": "ab1@naver.com",
+      "password": "abcdefg#1",
+      "nickName" : "꿈구는 곰돌이",
+      "type": "user",
+      "phone": "01012340001"
+    },{
+      "id": "u2",
+      "email": "ab2@naver.com",
+      "password": "abcdefg#2",
+      "nickName" : "짱구",
+      "type": "user",
+      "phone": "01012340002"
+    },{
+      "id": "u3",
+      "email": "ab3@naver.com",
+      "password": "abcdefg#3",
+      "nickName" : "에그마요",
+      "type": "user",
+      "phone": "01012340003"
+    },{
+      "id": "u4",
+      "email": "ab4@naver.com",
+      "password": "abcdefg#4",
+      "nickName" : "라떼",
+      "type": "user",
+      "phone": "01012340004"
+    },{
+      "id": "u5",
+      "email": "ab5@naver.com",
+      "password": "abcdefg#5",
+      "nickName" : "아이스 핫초쿄",
+      "type": "user",
+      "phone": "01012340005"
+    },{
+      "id": "u6",
+      "email": "ab6@naver.com",
+      "password": "abcdefg#6",
+      "nickName" : "늙은생강",
+      "type": "user",
+      "phone": "01012340006"
+    },{
+      "id": "u7",
+      "email": "ab7@naver.com",
+      "password": "abcdefg#7",
+      "nickName" : "당근당근",
+      "type": "user",
+      "phone": "01012340007"
+    },{
+      "id": "u8",
+      "email": "ab8@naver.com",
+      "password": "abcdefg#8",
+      "nickName" : "abcxyz",
+      "type": "user",
+      "phone": "01012340008"
+    },{
+      "id": "u9",
+      "email": "ab9@naver.com",
+      "password": "abcdefg#9",
+      "nickName" : "hoho77",
+      "type": "user",
+      "phone": "01012340009"
+    },{
+      "id": "u10",
+      "email": "ab10@naver.com",
+      "password": "abcdefg#10",
+      "nickName" : "2024hi",
+      "type": "user",
+      "phone": "01012340010"
+    },{
+      "id": "u11",
+      "email": "ab11@naver.com",
+      "password": "abcdefg#11",
+      "nickName" : "익명자",
+      "type": "user",
+      "phone": "01012340011"
+    },{
+      "id": "u12",
+      "email": "ab12@naver.com",
+      "password": "abcdefg#12",
+      "nickName" : "누구게",
+      "type": "user",
+      "phone": "01012340012"
+    }
+  ],
+  "admin": [
+    {
+      "id": "a1",
+      "email": "admin1@naver.com",
+      "password": "hijklmn#1",
+      "nickName" : "admin1",
+      "type": "admin",
+      "phone": "01056780001"
+    },{
+      "id": "a2",
+      "email": "admin2@naver.com",
+      "password": "hijklmn#2",
+      "nickName" : "admin2",
+      "type": "admin",
+      "phone": "01056780002"
+    }
+  ]
+}
