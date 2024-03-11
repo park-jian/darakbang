@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import profile from "../data/profile.json";
+import axios from "axios";
 const testUser = profile.user[0];
 
 const handleButtonClick = (inputId) => {
+  //MyPage 함수 안으로 들어가야 하는거 아님?
   const inputElem = document.getElementById(inputId);
   inputElem.readOnly = false;
+  //fetchData();
 };
 
 const handleBlurEvent = (e) => {
@@ -13,6 +16,24 @@ const handleBlurEvent = (e) => {
 };
 
 export default function MyPage() {
+  const [userData, setUserData] = useState("");
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios({
+          method: "get",
+          url: "/user",
+        });
+        if (res.status === 200) {
+          const user = res.data.user[1]; //일단 두번째 사용자를 로그인 유저라 가정
+          setUserData(user);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, []); // 빈 배열을 전달하여 컴포넌트가 마운트될 때 한 번만 실행되도록 함.
   return (
     <div className="flex justify-center items-center flex-col w-6/12 h-3/5 mx-auto my-12">
       <div
@@ -35,7 +56,7 @@ export default function MyPage() {
             id="my_id"
             type="text"
             name="id"
-            value={testUser.id}
+            value={userData && userData.id}
             readOnly
           />
         </div>
@@ -53,7 +74,7 @@ export default function MyPage() {
             id="my_nickname"
             type="text"
             name="nickname"
-            value={testUser.nickName}
+            value={userData && userData.nickName}
             readOnly
           />
           <button
@@ -77,7 +98,7 @@ export default function MyPage() {
             id="my_email"
             type="text"
             name="email"
-            value={testUser.email}
+            value={userData && userData.email}
             readOnly
           />
           <button
@@ -101,7 +122,7 @@ export default function MyPage() {
             id="my_phone"
             type="text"
             name="phone"
-            value={testUser.phone}
+            value={userData && userData.phone}
             readOnly
           />
           <button
@@ -125,7 +146,7 @@ export default function MyPage() {
             id="my_password"
             type="password"
             name="password"
-            value={testUser.password}
+            value={userData && userData.password}
             readOnly
           />
           <button

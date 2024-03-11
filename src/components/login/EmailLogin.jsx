@@ -20,7 +20,7 @@ export default function EmailLogin() {
     //비밀번호 유효성 검사(영문대또는 소문자, 숫자, 특수기호 포함 최소 1개씩 포함 총 8자 이상)
     const passwordRegex =
       /^(?=.*[a-zA-Z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
-    if (!passwordRegex.test(password)) {
+    if (password.length > 0 && !passwordRegex.test(password)) {
       setPasswordError("비밀 번호를 확인해 주세요");
     } else {
       setPasswordError();
@@ -29,7 +29,7 @@ export default function EmailLogin() {
   const handleEmailBlur = (e) => {
     //이메일 유효성 검사(@기준 앞 구간이 알파벳 또는 숫자 조합, 뒷 구간이 알파벳 숫자 조합, @ 뒷구간에 . 뒷구간이 알파벳)
     const emailRegex = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-za-z0-9\-]+/;
-    if (!emailRegex.test(email)) {
+    if (email.length > 0 && !emailRegex.test(email)) {
       setEmailError("아이디는 이메일 형식으로 입력해주세요.");
     } else {
       setEmailError();

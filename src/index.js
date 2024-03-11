@@ -16,6 +16,17 @@ import PasswordSearch from './pages/PasswordSearch.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import Map from './pages/Map.jsx';
 
+async function enableMocking() {
+  if (process.env.NODE_ENV !== 'development') {
+    return
+  }
+ 
+  const { worker } = await import('./mocks/browser')
+ 
+  // `worker.start()` returns a Promise that resolves
+  // once the Service Worker is up and ready to intercept requests.
+  return worker.start()
+}
 
 const router = createBrowserRouter([
   {
@@ -40,8 +51,11 @@ const router = createBrowserRouter([
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-);
+
+enableMocking().then(() => {
+  root.render(
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
+  );
+})
